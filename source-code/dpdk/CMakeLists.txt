@@ -1,8 +1,6 @@
 find_package (pcap)
 find_package (dpdk)
 
-include_directories ("include")
-
 if (${DPDK_FOUND})
     include_directories (${DPDK_INCLUDE_DIR})
     add_definitions (${DPDK_INCLUDE_CONFIG})
