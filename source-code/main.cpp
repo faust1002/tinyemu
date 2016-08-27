@@ -1,3 +1,4 @@
+#include "logging.hpp"
 #include "dpdk.hpp"
 #include <iostream>
 #include <exception>
@@ -5,9 +6,21 @@
 int main(int argc, char** argv)
 try
 {
-    std::cout << "Hello tinyemu!\n";
+    std::cerr << "Hello tinyemu!\n";
+    std::cerr << "Compilation datetime " << __DATE__ << " " << __TIME__ << '\n';
 
     argc = dpdk::init_environment(argc, argv);
+
+    helpers::init_logging("zosia.log");
+
+    LOG_TRACE << "kasia 0";
+    LOG_DEBUG << "kasia 1";
+    LOG_INFO << "kasia 2";
+    LOG_WARNING << "kasia 3";
+    LOG_ERROR << "kasia 4";
+    LOG_FATAL << "kasia 5";
+
+    std::cerr << "Goodbye tinyemu!\n";
 
     return 0;
 }
