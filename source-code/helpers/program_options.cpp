@@ -43,7 +43,7 @@ cfg_options parse(int argc, char** argv)
 
 std::string get_help()
 {
-    return std::string {};
+    return std::string {"Not done yet"};
 }
 
 }
