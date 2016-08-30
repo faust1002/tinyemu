@@ -1,4 +1,5 @@
 #include "logging.hpp"
+#include "program_options.hpp"
 #include "dpdk.hpp"
 #include <iostream>
 #include <exception>
@@ -10,6 +11,15 @@ try
     std::cerr << "Compilation datetime " << __DATE__ << " " << __TIME__ << '\n';
 
     dpdk::init_environment(argc, argv);
+
+    auto cfg = helpers::parse(argc, argv);
+    if (cfg.help)
+    {
+        std::cout << helpers::get_help() << '\n';
+        return 0;
+    }
+
+    std::cout << cfg << '\n';
 
     helpers::init_logging("zosia.log");
 

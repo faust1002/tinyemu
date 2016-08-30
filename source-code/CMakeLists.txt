@@ -1,6 +1,6 @@
 find_package (dpdk)
 find_package (pcap)
-find_package (Boost 1.58 COMPONENTS system log)
+find_package (Boost 1.58 COMPONENTS system log program_options)
 
 add_subdirectory (dpdk)
 add_subdirectory (helpers)
