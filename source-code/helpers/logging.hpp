@@ -1,5 +1,6 @@
 #pragma once
 
+#include "program_options.hpp"
 #include <string>
 #include <cstring>
 
@@ -19,6 +20,6 @@
 namespace helpers
 {
 
-void init_logging(const std::string& filename);
+void init_logging(const helpers::cfg_logging& cfg);
 
 }

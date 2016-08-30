@@ -7,13 +7,23 @@
 namespace helpers
 {
 
-struct cfg_options
+struct cfg_logging
 {
-    bool help = false;
     std::string log_file = "";
     std::string log_severity = "";
     int log_size = 0;
-    uint8_t port_id = 0u;
+};
+
+struct cfg_network
+{
+    uint8_t port_id;
+};
+
+struct cfg_options
+{
+    bool help = false;
+    cfg_logging logging;
+    cfg_network network;
 };
 
 std::ostream& operator<<(std::ostream& os,

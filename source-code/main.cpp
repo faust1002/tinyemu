@@ -19,9 +19,7 @@ try
         return 0;
     }
 
-    std::cout << cfg << '\n';
-
-    helpers::init_logging("zosia.log");
+    helpers::init_logging(cfg.logging);
 
     LOG_TRACE << "kasia 0";
     LOG_DEBUG << "kasia 1";
