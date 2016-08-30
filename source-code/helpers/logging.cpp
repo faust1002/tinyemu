@@ -34,16 +34,21 @@ namespace helpers
 
 void init_logging(const std::string& filename)
 {
+    namespace log = boost::log;
+    namespace keywords = log::keywords;
+    namespace expressions = log::expressions;
+    namespace posix_time = boost::posix_time;
+
     auto fn = prepare_filename(filename);
-    boost::log::add_file_log(
-        boost::log::keywords::file_name = fn.c_str(),
-        boost::log::keywords::rotation_size = 10 * 1024 * 1024,
-        boost::log::keywords::format =
+    log::add_file_log(
+        keywords::file_name = fn.c_str(),
+        keywords::rotation_size = 10 * 1024 * 1024,
+        keywords::format =
         (
-            boost::log::expressions::stream
-                << boost::log::expressions::format_date_time<boost::posix_time::ptime>("TimeStamp", "%Y-%m-%d %H:%M:%S.%f")
-                << ": [" << boost::log::trivial::severity
-                << "] " << boost::log::expressions::smessage
+            expressions::stream
+                << expressions::format_date_time<posix_time::ptime>("TimeStamp", "%Y-%m-%d %H:%M:%S.%f")
+                << ": [" << log::trivial::severity
+                << "] " << log::expressions::smessage
         )
     );
 
