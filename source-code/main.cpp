@@ -9,7 +9,7 @@ try
     std::cerr << "Hello tinyemu!\n";
     std::cerr << "Compilation datetime " << __DATE__ << " " << __TIME__ << '\n';
 
-    argc = dpdk::init_environment(argc, argv);
+    dpdk::init_environment(argc, argv);
 
     helpers::init_logging("zosia.log");
 
