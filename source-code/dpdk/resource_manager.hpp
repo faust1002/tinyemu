@@ -1,5 +1,4 @@
 #pragma once
-#include <vector>
 
 namespace dpdk
 {
@@ -19,8 +18,6 @@ public:
     resource_manager& operator=(resource_manager&&) = default;
 
     ~resource_manager() = default;
-
-    std::vector<int> temp;
 
 private:
     resource_manager();
