@@ -22,6 +22,8 @@ try
 
     helpers::init_logging(cfg.logging);
 
+    dpdk::create_resource_manager();
+
     std::cerr << "Goodbye tinyemu!\n";
 
     return 0;
