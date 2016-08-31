@@ -1,5 +1,3 @@
-find_package (Boost 1.58 COMPONENTS log date_time program_options)
-
 set (LIB_NAME "helpers")
 add_library (${LIB_NAME} STATIC logging.cpp program_options.cpp)
 
