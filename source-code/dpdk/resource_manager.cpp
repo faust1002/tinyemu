@@ -1,5 +1,4 @@
 #include "resource_manager.hpp"
-#include <utility>
 
 namespace dpdk
 {
