@@ -1,6 +1,7 @@
 #include "logging.hpp"
 #include "program_options.hpp"
 #include "dpdk.hpp"
+#include "resource_manager.hpp"
 #include <iostream>
 #include <exception>
 
@@ -20,13 +21,6 @@ try
     }
 
     helpers::init_logging(cfg.logging);
-
-    LOG_TRACE << "kasia 0";
-    LOG_DEBUG << "kasia 1";
-    LOG_INFO << "kasia 2";
-    LOG_WARNING << "kasia 3";
-    LOG_ERROR << "kasia 4";
-    LOG_FATAL << "kasia 5";
 
     std::cerr << "Goodbye tinyemu!\n";
 
