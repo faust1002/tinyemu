@@ -1,4 +1,5 @@
 #include "resource_manager.hpp"
+#include "resource_list.hpp"
 #include "logging.hpp"
 #include "rte_lcore.h"
 #include "rte_ethdev.h"

@@ -1,6 +1,11 @@
-set (ut_suite_name "testdpdk")
+set (ut_suite_name "ut_dpdk")
 
-add_executable (${ut_suite_name} "testdpdk.cpp")
+set (src
+     "ut_dpdk.cpp"
+     "ut_resource_list.cpp"
+)
+
+add_executable (${ut_suite_name} ${src})
 
 target_link_libraries (${ut_suite_name} "dpdk")
 target_link_libraries (${ut_suite_name} "ut_runner")
