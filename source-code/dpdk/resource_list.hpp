@@ -75,11 +75,11 @@ private:
 
         create_single_element_list();
 
-        auto idx = T {1};
-        auto last = elements - 1;
+        T idx = T {1u};
+        T last = elements - 1u;
         while (idx != last)
         {
-            node_t n {idx, size_type {idx + 1}, true};
+            node_t n {idx, size_type {idx + 1u}, true};
             list.push_back(n);
             ++idx;
         }
@@ -87,7 +87,7 @@ private:
         node_t n {last, boost::none, true};
         list.push_back(n);
 
-        list[size_type {0}].next = size_type {1};
+        list[size_type {0}].next = size_type {1u};
         list[size_type {last}].next = boost::none;
     }
 
